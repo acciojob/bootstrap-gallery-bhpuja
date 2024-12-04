@@ -1,16 +1,143 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    .card-img-top {
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
 
+    .card-body {
+      text-align: center;
+    }
+
+    /* Lightbox styles */
+    .modal-dialog {
+      max-width: 80%;
+    }
+
+    .modal-content {
+      background-color: #000;
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+
+    .modal-body img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <!-- Header -->
+  <div class="container mt-5">
+    <h2 class="text-center">Cards Gallery</h2>
+    <div class="row mt-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 1" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 1</h6>
+            <p class="card-text">Description for image 1.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 2" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 2</h6>
+            <p class="card-text">Description for image 2.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 3" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 3</h6>
+            <p class="card-text">Description for image 3.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 4" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 4</h6>
+            <p class="card-text">Description for image 4.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 5" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 5</h6>
+            <p class="card-text">Description for image 5.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 6" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <div class="card-body">
+            <h6 class="card-title">Image 6</h6>
+            <p class="card-text">Description for image 6.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal (Lightbox) -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" role="dialog" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" alt="Large Image" id="lightboxImage">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap and jQuery scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Lightbox functionality
+    $('#lightboxModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var imageSrc = button.data('img'); // Extract the image source
+      var modal = $(this);
+      modal.find('#lightboxImage').attr('src', imageSrc); // Set the image source in the modal
+    });
+  </script>
 
 </body>
-
 </html>
