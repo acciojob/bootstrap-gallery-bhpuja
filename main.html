@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,51 +8,51 @@
   <title>Cards Gallery</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  
+  <!-- Lightbox CSS (for image popup) -->
+  <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.11.2/dist/index.min.css" rel="stylesheet">
   <style>
     .card-img-top {
-      border-radius: 0.25rem;
-      cursor: pointer;
+      border-radius: 5px;
     }
-
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
     .card-body {
       text-align: center;
     }
-
-    /* Lightbox styles */
-    .modal-dialog {
-      max-width: 80%;
+    h6 {
+      font-size: 1.1rem;
+      font-weight: bold;
     }
-
-    .modal-content {
-      background-color: #000;
+    p {
+      font-size: 0.9rem;
     }
-
-    .modal-body {
-      padding: 0;
-    }
-
-    .modal-body img {
-      width: 100%;
-      height: auto;
+    .gallery-header {
+      margin-bottom: 30px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="container mt-5">
-    <h2 class="text-center">Cards Gallery</h2>
-    <div class="row mt-4">
-
+  <div class="container">
+    <div class="gallery-header">
+      <h2>Cards Gallery</h2>
+    </div>
+    
+    <div class="row">
       <!-- Card 1 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 1" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 1">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 1">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 1</h6>
-            <p class="card-text">Description for image 1.</p>
+            <h6>Description 1</h6>
+            <p>Details about the first image.</p>
           </div>
         </div>
       </div>
@@ -58,10 +60,12 @@
       <!-- Card 2 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 2" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 2">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 2">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 2</h6>
-            <p class="card-text">Description for image 2.</p>
+            <h6>Description 2</h6>
+            <p>Details about the second image.</p>
           </div>
         </div>
       </div>
@@ -69,10 +73,12 @@
       <!-- Card 3 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 3" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 3">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 3">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 3</h6>
-            <p class="card-text">Description for image 3.</p>
+            <h6>Description 3</h6>
+            <p>Details about the third image.</p>
           </div>
         </div>
       </div>
@@ -80,10 +86,12 @@
       <!-- Card 4 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 4" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 4">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 4">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 4</h6>
-            <p class="card-text">Description for image 4.</p>
+            <h6>Description 4</h6>
+            <p>Details about the fourth image.</p>
           </div>
         </div>
       </div>
@@ -91,10 +99,12 @@
       <!-- Card 5 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 5" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 5">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 5">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 5</h6>
-            <p class="card-text">Description for image 5.</p>
+            <h6>Description 5</h6>
+            <p>Details about the fifth image.</p>
           </div>
         </div>
       </div>
@@ -102,42 +112,23 @@
       <!-- Card 6 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Image 6" data-toggle="modal" data-target="#lightboxModal" data-img="https://via.placeholder.com/350x200">
+          <a href="https://via.placeholder.com/800x600" data-bs-lightbox="gallery" data-bs-title="Image 6">
+            <img src="https://via.placeholder.com/800x600" class="card-img-top" alt="Image 6">
+          </a>
           <div class="card-body">
-            <h6 class="card-title">Image 6</h6>
-            <p class="card-text">Description for image 6.</p>
+            <h6>Description 6</h6>
+            <p>Details about the sixth image.</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- Modal (Lightbox) -->
-  <div class="modal fade" id="lightboxModal" tabindex="-1" role="dialog" aria-labelledby="lightboxModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <img src="" alt="Large Image" id="lightboxImage">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap and jQuery scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    // Lightbox functionality
-    $('#lightboxModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget); // Button that triggered the modal
-      var imageSrc = button.data('img'); // Extract the image source
-      var modal = $(this);
-      modal.find('#lightboxImage').attr('src', imageSrc); // Set the image source in the modal
-    });
-  </script>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Lightbox JS (for image popup) -->
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.11.2/dist/index.bundle.min.js"></script>
 
 </body>
 </html>
